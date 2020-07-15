@@ -25,7 +25,7 @@
             <img class="img-fluid" src="images/top.jpg">
             <div ng-repeat="x in cards">
 
-                <img style="z-index: {{y}};" class="img img-fluid" ng-click="myFunc($event)" ng-attr-id="{{y + x.color + 0}}"
+                <img class="img img-fluid" ng-click="myFunc($event)" ng-attr-id="{{y + x.color + 0}}"
                     ng-src="{{'images/' + y + '_' + x.color + '.png'}}" ng-repeat="y in x.numbers">
 
 
