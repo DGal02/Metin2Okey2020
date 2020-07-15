@@ -1,16 +1,6 @@
 var app = angular.module('myApp', []);
-function sleep(milliseconds) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-        if ((new Date().getTime() - start) > milliseconds) {
-            break;
-        }
-    }
-}
 app.controller('myCtrl', function ($scope) {
-    $scope.red = [1, 2, 3, 4, 5, 6, 7, 8];
-    $scope.yellow = [1, 2, 3, 4, 5, 6, 7, 8];
-    $scope.blue = [1, 2, 3, 4, 5, 6, 7, 8];
+
     $scope.cards = [
         { color: 'red', numbers: [1, 2, 3, 4, 5, 6, 7, 8] },
         { color: 'yellow', numbers: [1, 2, 3, 4, 5, 6, 7, 8] },
