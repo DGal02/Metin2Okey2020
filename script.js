@@ -1,4 +1,12 @@
 var app = angular.module('myApp', []);
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+      if ((new Date().getTime() - start) > milliseconds){
+        break;
+      }
+    }
+  }
 app.controller('myCtrl', function ($scope) {
     $scope.red = [1, 2, 3, 4, 5, 6, 7, 8];
     $scope.yellow = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -9,20 +17,24 @@ app.controller('myCtrl', function ($scope) {
         { color: 'blue', numbers: [1, 2, 3, 4, 5, 6, 7, 8] }
 
     ]
-    $scope.myFunc = function (event) {
-        $scope.id = event.target.id;
+    $scope.myFunc = async function (event) {
+        $scope.id =  event.target.id;
         $scope.number = $scope.id.charAt(0);
         $scope.color = $scope.id.slice(1, $scope.id.length - 1)
         $scope.toggle = $scope.id.charAt($scope.id.length - 1);
 
         if ($scope.toggle == "0") {
 
-            document.getElementById($scope.id).src = "images/back.png";
+            $("#" + $scope.id).attr("src", "images/back.png");
             document.getElementById($scope.id).id = $scope.number + $scope.color + 1;
+            
+            
+            
 
 
         } else {
-            document.getElementById($scope.id).src = "images/" + $scope.number + "_" + $scope.color + ".png";
+            $("#" + $scope.id).attr("src", "images/" + $scope.number + "_" + $scope.color + ".png");
+            // document.getElementById($scope.id).src = "images/" + $scope.number + "_" + $scope.color + ".png";
             document.getElementById($scope.id).id = $scope.number + $scope.color + 0;
 
         }
