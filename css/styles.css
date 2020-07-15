@@ -17,14 +17,6 @@ html, body {
 .pt-5 {
     padding-top: 7rem!important;
 }
-@keyframes fadeOut {
-    from {opacity: 100%;}
-    to {opacity: 0%;}
-}
-@keyframes fadeIn {
-    from {opacity: 0%;}
-    to {opacity: 100%;}
-}
 @keyframes fade {
     0% {opacity: 100%;}
     25% {opacity :50%;}
@@ -39,14 +31,7 @@ html, body {
     55% {opacity :50%;}
     100% {opacity: 100%;}
 }
-.fadeIn {
-    animation: fadeIn 0.125s infinite;
-    opacity:0%;
-}
-.fadeOut {
-    animation: fadeOut 0.125s infinite;
-    opacity:100%;
-}
+
 .fade {
     animation: fade 0.250s;
     opacity:100%;
