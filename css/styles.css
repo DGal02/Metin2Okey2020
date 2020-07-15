@@ -12,7 +12,7 @@
 html, body {
     min-height: 100vh;
     background-color: red; 
-    background-image: linear-gradient(black, #511515); 
+    background-image: linear-gradient(#511515,#140505 ); 
 }
 .pt-5 {
     padding-top: 7rem!important;
