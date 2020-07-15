@@ -46,19 +46,25 @@ app.controller('myCtrl', function ($scope) {
     };
 });
 
-$('#popoverhide').popover().click(function () {
-    setTimeout(function () {
-        $('#popoverhide').popover('hide');
-    }, 1500);
-});
+
 function restart() {
     $(".img").each(function () {
         let id = $(this).attr('id');
         let number = id.charAt(0);
         let color = id.slice(1, id.length - 1);
-        $(this).attr("src", "images/" + number + "_" + color + ".png");
-        $(this).attr("id", number + color + 0);
+        let toggle = id.charAt( id.length - 1);
         $(this).removeClass("fade2");
         $(this).removeClass("fade");
+        if (toggle == 1) {
+            $(this).animate({opacity:0}, 125);
+            setTimeout(() => {
+                $(this).attr("src", "images/" + number + "_" + color + ".png");
+            $(this).attr("id", number + color + 0);
+            }, 125);
+            $(this).animate({opacity:1}, 125);
+        }
+       
     });
 };
+
+
