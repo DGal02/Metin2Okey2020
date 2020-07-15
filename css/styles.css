@@ -25,6 +25,20 @@ html, body {
     from {opacity: 0%;}
     to {opacity: 100%;}
 }
+@keyframes fade {
+    0% {opacity: 100%;}
+    25% {opacity :50%;}
+    50% {opacity :0%;}
+    55% {opacity :50%;}
+    100% {opacity: 100%;}
+}
+@keyframes fade2 {
+    0% {opacity: 100%;}
+    25% {opacity :50%;}
+    50% {opacity :0%;}
+    55% {opacity :50%;}
+    100% {opacity: 100%;}
+}
 .fadeIn {
     animation: fadeIn 0.125s infinite;
     opacity:0%;
@@ -32,4 +46,15 @@ html, body {
 .fadeOut {
     animation: fadeOut 0.125s infinite;
     opacity:100%;
+}
+.fade {
+    animation: fade 0.250s;
+    opacity:100%;
+
+}
+
+.fade2 {
+    animation: fade2 0.250s;
+    opacity:100%;
+
 }
